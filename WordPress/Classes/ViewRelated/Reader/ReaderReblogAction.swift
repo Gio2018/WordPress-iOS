@@ -2,6 +2,10 @@ import Foundation
 
 /// Encapsulates a command to reblog a post
 class ReaderReblogAction {
+    // tells if the origin is the reader list or detail, for analytics purposes
+    enum OriginType {
+        case list, detail
+    }
 
     private let blogService: BlogService
     private let presenter: ReblogPresenter
@@ -19,7 +23,8 @@ class ReaderReblogAction {
     }
 
     /// Executes the reblog action on the origin UIViewController
-    func execute(readerPost: ReaderPost, origin: UIViewController) {
+    func execute(readerPost: ReaderPost, origin: UIViewController, originType: OriginType) {
+        trackReblog(readerPost: readerPost, originType: originType)
         presenter.presentReblog(blogs: blogService.blogsForAllAccounts(),
                                 readerPost: readerPost,
                                 origin: origin)
@@ -126,5 +131,23 @@ struct ReblogFormatter {
 
     private static func embedinCitation(html: String) -> String {
         return "<cite>\(html)</cite>"
+    }
+}
+
+// MARK: - Analytics
+extension ReaderReblogAction {
+    /// tracks the source of the reblog action
+    fileprivate func trackReblog(readerPost: ReaderPost, originType: OriginType) {
+
+        var properties = [AnyHashable: Any]()
+        properties[WPAppAnalyticsKeyBlogID] = readerPost.siteID
+        properties[WPAppAnalyticsKeyPostID] = readerPost.postID
+
+        switch originType {
+        case .list:
+            WPAnalytics.track(WPAnalyticsStat.readerArticleReblogged, withProperties: properties)
+        case .detail:
+            break
+        }
     }
 }
