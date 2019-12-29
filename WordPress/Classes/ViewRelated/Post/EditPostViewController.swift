@@ -168,6 +168,9 @@ class EditPostViewController: UIViewController {
 
             if let insertedMedia = self.insertedMedia {
                 editor.prepopulateMediaItems(insertedMedia)
+                if self.postIsReblogged {
+                    self.insertedMedia = nil
+                }
             }
         }
     }

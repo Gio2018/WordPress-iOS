@@ -338,9 +338,9 @@
 		31C9F82E1A2368A2008BB945 /* BlogDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C9F82D1A2368A2008BB945 /* BlogDetailHeaderView.m */; };
 		31EC15081A5B6675009FC8B3 /* WPStyleGuide+Suggestions.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EC15071A5B6675009FC8B3 /* WPStyleGuide+Suggestions.m */; };
 		321E292623A5F10900588610 /* FullScreenCommentReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328CEC5D23A532BA00A6899E /* FullScreenCommentReplyViewController.swift */; };
-		325D3B3D23A8376400766DF6 /* FullScreenCommentReplyViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D3B3C23A8376400766DF6 /* FullScreenCommentReplyViewControllerTests.swift */; };
 		323F8F3023A22C4C000BA49C /* SiteCreationRotatingMessageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6CDDA23A1FF0D002556FF /* SiteCreationRotatingMessageViewTests.swift */; };
 		323F8F3123A22C8F000BA49C /* SiteCreationRotatingMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3221278523A0BD27002CA183 /* SiteCreationRotatingMessageView.swift */; };
+		325D3B3D23A8376400766DF6 /* FullScreenCommentReplyViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D3B3C23A8376400766DF6 /* FullScreenCommentReplyViewControllerTests.swift */; };
 		32CA6EC02390C61F00B51347 /* PostListEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA6EBF2390C61F00B51347 /* PostListEditorPresenter.swift */; };
 		37022D931981C19000F322B7 /* VerticallyStackedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 37022D901981BF9200F322B7 /* VerticallyStackedButton.m */; };
 		374CB16215B93C0800DD0EBC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374CB16115B93C0800DD0EBC /* AudioToolbox.framework */; };
@@ -5519,6 +5519,25 @@
 			name = ReaderPostActions;
 			sourceTree = "<group>";
 		};
+		3F71A2F523AEA21B003A3903 /* Reblog */ = {
+			isa = PBXGroup;
+			children = (
+				3F8CB10523A07B17007627BF /* ReaderReblogAction.swift */,
+				3F5B3EB023A851480060FF1F /* ReaderReblogFormatter.swift */,
+				3F5B3EAE23A851330060FF1F /* ReaderReblogPresenter.swift */,
+			);
+			path = Reblog;
+			sourceTree = "<group>";
+		};
+		3F71A2F623AEA2A0003A3903 /* Save for later */ = {
+			isa = PBXGroup;
+			children = (
+				175A650B20B6F7280023E71B /* ReaderSaveForLater+Analytics.swift */,
+				D8160441209C1B0F00ABAFFA /* ReaderSaveForLaterAction.swift */,
+			);
+			path = "Save for later";
+			sourceTree = "<group>";
+		};
 		400A2C8D2217AAA1000A8A59 /* Time-based data */ = {
 			isa = PBXGroup;
 			children = (
@@ -8837,6 +8856,8 @@
 		D816043E209C1AD300ABAFFA /* ReaderPostActions */ = {
 			isa = PBXGroup;
 			children = (
+				3F71A2F523AEA21B003A3903 /* Reblog */,
+				3F71A2F623AEA2A0003A3903 /* Save for later */,
 				D8212CB820AA77AD008E8AE8 /* ReaderActionHelpers.swift */,
 				D8212CC220AA7F57008E8AE8 /* ReaderBlockSiteAction.swift */,
 				D8212CC420AA83F9008E8AE8 /* ReaderCommentAction.swift */,
@@ -8844,11 +8865,6 @@
 				D8212CC620AA85C1008E8AE8 /* ReaderHeaderAction.swift */,
 				D8212CB020AA64E1008E8AE8 /* ReaderLikeAction.swift */,
 				D8212CC820AA87E5008E8AE8 /* ReaderMenuAction.swift */,
-				3F8CB10523A07B17007627BF /* ReaderReblogAction.swift */,
-				3F5B3EB023A851480060FF1F /* ReaderReblogFormatter.swift */,
-				3F5B3EAE23A851330060FF1F /* ReaderReblogPresenter.swift */,
-				175A650B20B6F7280023E71B /* ReaderSaveForLater+Analytics.swift */,
-				D8160441209C1B0F00ABAFFA /* ReaderSaveForLaterAction.swift */,
 				D8212CB620AA7703008E8AE8 /* ReaderShareAction.swift */,
 				D8212CBE20AA7B7F008E8AE8 /* ReaderShowAttributionAction.swift */,
 				D8212CC020AA7C58008E8AE8 /* ReaderShowMenuAction.swift */,
